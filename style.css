@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(45deg, #1e1e1e, #000); /* Dark gradient for space effect */
+    font-family: Arial, sans-serif; /* Optional: Set font */
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* Stardust Effect using Pseudo-elements */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/stars.jpg') repeat; /* Optional: star texture image */
+    opacity: 0.3;
+    pointer-events: none; /* So the stars don’t interfere with clicks */
+    z-index: -1; /* Ensure it stays in the background */
+}
+/* Header Styling */
+header {
+    background-color: #333; /* Dark background for the header */
+    color: white; /* White text color */
+    padding: 20px; /* Space around the content */
+    text-align: center; /* Center-align the text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Header Title */
+header h1 {
+    font-size: 2.5em; /* Bigger font size for the title */
+    margin-bottom: 15px; /* Space below the title */
+    font-family: 'Arial', sans-serif; /* Clean font */
+}
+
+/* Search Bar Styling */
+#search-bar {
+    width: 80%; /* Make the search bar wide */
+    max-width: 500px; /* Limit the maximum width */
+    padding: 10px; /* Add some padding inside the search bar */
+    font-size: 1.2em; /* Slightly bigger text for ease of reading */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Rounded corners */
+    background-color: #fff; /* White background for the input */
+    color: #333; /* Dark text color */
+    outline: none; /* Remove the outline on focus */
+    transition: 0.3s ease; /* Smooth transition for focus effect */
+    margin: 0 auto; /* Center the search bar */
+}
+
+#search-bar:focus {
+    border: 2px solid #ff9800; /* Highlight the search bar when focused */
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.5); /* Add a glow effect on focus */
+}
+
+/* Movie Container Styling */
+#movie-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap into new lines if needed */
+    justify-content: space-between; /* Distributes the cards evenly with space between */
+    margin: 20px;
+}
+
+/* Style for movie cards */
+.movie-card {
+    width: 200px;           /* Set a fixed width for the movie cards */
+    margin: 10px;           /* Add spacing between the cards */
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #000000;  /* Light gray background for the container */
+    overflow: hidden;
+    padding: 10px;           /* Add padding to separate content from the border */
+}
+
+.movie-card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+}
+
+/* Movie Poster Styling */
+.movie-card img {
+    width: 100%; /* Ensure the image takes up the full width of the card */
+    height: 300px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensures the image covers the area without distorting */
+}
+
+/* Style for movie title */
+.movie-card h2 {
+    font-size: 18px;
+    color: #f3eded;  /* Set a dark color for the title */
+    margin: 10px 0;
+}
+
+/* Style for movie rating */
+.movie-card p {
+    font-size: 16px;
+    color: #ff9800;  /* Set a warm color for the rating */
+}
+
+/* Style for stars */
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.star:hover,
+.star.selected {
+    color: gold;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;  /* Hidden by default */
+    position: fixed;
+    z-index: 1;  /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;  /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less depending on screen size */
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Optional: Header styling for mobile view */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Slightly smaller title for smaller screens */
+    }
+
+    #search-bar {
+        width: 90%; /* Wider search bar on mobile */
+    }
+
+    .movie-card {
+        width: 48%; /* Adjust movie card width for smaller screens */
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Rating Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Rating Website</h1>
+        <input type="text" id="search-bar" placeholder="Search for movies...">
+    </header>
+
+    <main id="movie-container">
+        <div class="movie-card" id="movie-template" style="display: none;">
+            <img src="" alt="Movie Poster" class="movie-poster">
+            <h2 class="movie-title"></h2>
+            <p class="movie-rating">⭐ <span>0</span></p>
+            <div class="stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-poster" src="" alt="Movie Poster">
+            <p id="modal-description"></p>
+            <p><strong>Genre:</strong> <span id="modal-genre"></span></p>
+            <p><strong>Cast:</strong> <span id="modal-cast"></span></p>
+            <p><strong>Rating:</strong> <span id="modal-rating"></span></p>
+        </div>
+    </div>
+</body>
+</html>
